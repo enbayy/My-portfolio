@@ -7,6 +7,13 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768 && isMenuOpen) {
@@ -28,20 +35,12 @@ const Navbar = () => {
                 <span className="text-3xl">&#9776;</span>
             </div>
             <ul className="hidden md:flex md:space-x-4">
-                <li><a href="#home" className="hover:bg-gray-700 p-2 rounded">Giriş</a></li>
-                <li><a href="#about" className="hover:bg-gray-700 p-2 rounded">Hakkımda</a></li>
-                <li><a href="#projects" className="hover:bg-gray-700 p-2 rounded">Çalışmalar</a></li>
-                <li><a href="#services" className="hover:bg-gray-700 p-2 rounded">Hizmetler</a></li>
-                <li><a href="#contact" className="hover:bg-gray-700 p-2 rounded">İletişim</a></li>
-                <li><a href="#cv" className="hover:bg-gray-700 p-2 rounded">CV</a></li>
+                <li><button onClick={() => scrollToSection('home')} className="hover:bg-gray-700 p-2 rounded">Giriş</button></li>
+                <li><button onClick={() => scrollToSection('about')} className="hover:bg-gray-700 p-2 rounded">Hakkımda</button></li>
             </ul>
             <ul className={`absolute top-16 left-0 w-full bg-gradient-to-r from-gray-900 to-gray-600 transition-all duration-300 ease-in-out ${isMenuOpen ? 'block' : 'hidden'}`}>
-                <li><a href="#home" className="block hover:bg-gray-700 p-2 rounded">Giriş</a></li>
-                <li><a href="#about" className="block hover:bg-gray-700 p-2 rounded">Hakkımda</a></li>
-                <li><a href="#projects" className="block hover:bg-gray-700 p-2 rounded">Çalışmalar</a></li>
-                <li><a href="#services" className="block hover:bg-gray-700 p-2 rounded">Hizmetler</a></li>
-                <li><a href="#contact" className="block hover:bg-gray-700 p-2 rounded">İletişim</a></li>
-                <li><a href="#cv" className="block hover:bg-gray-700 p-2 rounded">CV</a></li>
+                <li><button onClick={() => scrollToSection('home')} className="block hover:bg-gray-700 p-2 rounded">Giriş</button></li>
+                <li><button onClick={() => scrollToSection('about')} className="block hover:bg-gray-700 p-2 rounded">Hakkımda</button></li>
             </ul>
         </nav>
     );
