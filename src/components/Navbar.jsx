@@ -32,6 +32,8 @@ const Navbar = () => {
         { id: 'home', label: 'Giriş' },
         { id: 'about', label: 'Hakkımda' },
         { id: 'contact', label: 'İletişim' },
+        { id: 'services', label: 'Hizmetler' },
+        { id: 'projects', label: 'Projeler' },
     ];
 
     return (

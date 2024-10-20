@@ -3,7 +3,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 
-function ContactPage() {
+function ProjectsPage() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-800 to-black flex items-center justify-center">
             <form className='flex flex-col items-center w-full max-w-lg p-5 bg-gray-800 text-white rounded-lg'>
@@ -59,4 +59,4 @@ function ContactPage() {
     );
 }
 
-export default ContactPage;
+export default ProjectsPage;
