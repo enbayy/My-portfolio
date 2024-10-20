@@ -13,11 +13,11 @@ function AboutPage() {
 
     return (
         <div className="w-full min-h-screen bg-gradient-to-br from-gray-800 via-black to-gray-900 flex justify-center items-center">
-            <div className="w-full max-w-4xl bg-white/10 backdrop-blur-lg rounded-xl p-8 md:p-12 text-white shadow-2xl">
+            <div className="w-full max-w-4xl bg-gradient-to-br from-gray-800 via-black to-gray-900 backdrop-blur-lg rounded-xl p-8 md:p-12 text-white shadow-2xl mt-16">
                 <h1 className="text-4xl md:text-5xl font-extrabold border-b-4 border-blue-600 pb-4 mb-10">
                     Kim bu Enes?
                 </h1>
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+                <div className="space-y-10 text-lg md:text-xl leading-relaxed">
                     <p>
                         Merhaba, ben Enes Bayar. 2024 yılında Selçuk Üniversitesi Bilgisayar
                         Mühendisliği bölümünden mezun oldum. Üniversite hayatım boyunca teknoloji
@@ -35,13 +35,13 @@ function AboutPage() {
                 </div>
                 <div className="flex justify-center space-x-4 mt-10">
                     <a href={EnesBayarCv} download="EnesBayarCv.pdf">
-                        <button className="w-full max-w-xs py-3 px-6 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-lg transition-all transform hover:scale-105">
+                        <button className="p-2 bg-green-500 hover:bg-green-700 text-white rounded-lg shadow-lg transition-all transform hover:scale-105">
                             CV İndir
                         </button>
                     </a>
                     <button
                         onClick={handleScrollToContact}
-                        className="w-full max-w-xs py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-lg transition-all transform hover:scale-105"
+                        className="p-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg shadow-lg transition-all transform hover:scale-105"
                     >
                         İletişime Geç
                     </button>
