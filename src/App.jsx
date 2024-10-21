@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
@@ -29,6 +30,7 @@ function App() {
       <section id="projects">
         <ProjectsPage />
       </section>
+      <Footer />
     </div>
   );
 }
