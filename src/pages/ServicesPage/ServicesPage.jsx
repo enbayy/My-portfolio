@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const services = [
     {
@@ -16,12 +16,30 @@ const services = [
 ];
 
 function ServicesPage() {
+    const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsPageLoaded(true);
+        }, 500);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white p-5 overflow-hidden">
-            <h2 className="text-5xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 drop-shadow-lg">Hizmetler</h2>
+        <div className="relative flex flex-col items-center justify-center w-full min-h-screen h-full bg-gradient-to-b from-gray-800 to-black text-white p-5 overflow-hidden">
+            <h2 className={`text-5xl font-bold mb-24 mt-8 text-center bg-clip-text text-transparent text-white drop-shadow-lg 
+                ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 ease-in-out`}
+            >
+                Hizmetler
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl px-4">
                 {services.map((service, index) => (
-                    <div key={index} className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-800 to-gray-600 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div
+                        key={index}
+                        className={`flex flex-col items-center justify-center bg-gradient-to-r from-gray-800 to-gray-600 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 
+                            ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 ease-in-out`}
+                        style={{ transitionDelay: `${index * 100}ms` }}
+                    >
                         <h3 className="text-3xl font-bold mb-2 text-center">{service.title}</h3>
                         <p className="text-lg text-center font-light">{service.description}</p>
                     </div>

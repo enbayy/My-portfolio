@@ -11,6 +11,7 @@ const Navbar = () => {
         const section = document.getElementById(id);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
         }
     };
 
@@ -31,9 +32,9 @@ const Navbar = () => {
     const menuItems = [
         { id: 'home', label: 'Giriş' },
         { id: 'about', label: 'Hakkımda' },
-        { id: 'contact', label: 'İletişim' },
         { id: 'services', label: 'Hizmetler' },
         { id: 'projects', label: 'Projeler' },
+        { id: 'contact', label: 'İletişim' },
     ];
 
     return (
@@ -45,16 +46,16 @@ const Navbar = () => {
             <ul className="hidden md:flex md:space-x-4">
                 {menuItems.map(item => (
                     <li key={item.id}>
-                        <button onClick={() => scrollToSection(item.id)} className="hover:bg-gray-700 p-2 rounded">
+                        <button onClick={() => scrollToSection(item.id)} className="hover:bg-gray-800 p-2 rounded-2xl">
                             {item.label}
                         </button>
                     </li>
                 ))}
             </ul>
-            <ul className={`absolute top-16 left-0 w-full bg-gradient-to-r from-gray-900 to-gray-600 transition-all duration-300 ease-in-out ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <ul className={`absolute top-16 left-0 w-full bg-gradient-to-r from-gray-900 to-gray-600 transition-all duration-300 ease-in-out flex flex-col items-center justify-center ${isMenuOpen ? 'block' : 'hidden'}`}>
                 {menuItems.map(item => (
                     <li key={item.id}>
-                        <button onClick={() => scrollToSection(item.id)} className="block hover:bg-gray-700 p-2 rounded">
+                        <button onClick={() => scrollToSection(item.id)} className="block hover:bg-gray-800 p-2 rounded-2xl">
                             {item.label}
                         </button>
                     </li>

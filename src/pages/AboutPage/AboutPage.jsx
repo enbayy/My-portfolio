@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import EnesBayarCv from '../../assets/EnesBayarCv.pdf';
 
 function AboutPage() {
+    const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsPageLoaded(true);
+        }, 500);
+        return () => clearTimeout(timer);
+    }, []);
+
     const handleScrollToContact = () => {
         setTimeout(() => {
             const contactSection = document.getElementById('contact');
@@ -13,9 +22,12 @@ function AboutPage() {
 
     return (
         <div className="w-full min-h-screen bg-gradient-to-br from-gray-800 via-black to-gray-900 flex justify-center items-center">
-            <div className="w-full max-w-4xl bg-gradient-to-br from-gray-800 via-black to-gray-900 backdrop-blur-lg rounded-xl p-8 md:p-12 text-white shadow-2xl mt-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold border-b-4 border-blue-600 pb-4 mb-10">
+            <div className={`w-full max-w-4xl bg-gradient-to-br from-gray-800 via-black to-gray-900 backdrop-blur-lg rounded-xl p-8 md:p-12 text-white shadow-2xl mt-16 
+                transition-all duration-1000 ease-in-out transform-gpu 
+                ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <h1 className="text-4xl md:text-5xl font-extrabold inline-block pb-4 mb-10">
                     Kim bu Enes?
+                    <span className="block w-full h-1 bg-blue-600 mt-2 -mb-4"></span>
                 </h1>
                 <div className="space-y-10 text-lg md:text-xl leading-relaxed">
                     <p>

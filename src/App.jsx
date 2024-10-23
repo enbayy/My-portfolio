@@ -19,16 +19,16 @@ function App() {
         <AboutPage />
       </section>
 
-      <section id="contact">
-        <ContactPage />
-      </section>
-
       <section id="services">
         <ServicesPage />
       </section>
 
       <section id="projects">
         <ProjectsPage />
+      </section>
+
+      <section id="contact">
+        <ContactPage />
       </section>
       <Footer />
     </div>
