@@ -15,13 +15,13 @@ function ContactPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-800 to-black flex flex-col items-center justify-center">
-            <div className={`text-5xl mb-16 mt-10 text-center font-bold text-white 
+            <div className={`text-5xl mb-16 mt-20 text-center font-bold text-white 
                 ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 ease-in-out`}>
                 İletişim
             </div>
             <form className={`flex flex-col items-center w-full max-w-lg p-5 bg-gradient-to-b from-gray-800 to-black text-white rounded-lg 
                 ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 ease-in-out delay-200`}>
-                <div className='flex flex-col md:flex-row justify-center items-center mb-10 space-y-5 md:space-y-0 md:space-x-10'>
+                <div className='flex flex-col md:flex-row justify-center items-center mb-10 space-y-5 md:space-y-0 md:space-x-10 mt-5'>
                     <div className={`flex flex-col items-center 
                         ${isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 ease-in-out delay-300`}>
                         <div className='text-5xl mb-2'>
@@ -52,12 +52,12 @@ function ContactPage() {
                         <input
                             type="text"
                             placeholder='İsim'
-                            className='w-full md:w-1/2 p-3 border border-gray-400 rounded-lg text-black'
+                            className='w-full h-11 md:w-1/2 p-3 border border-gray-400 rounded-lg text-black'
                         />
                         <input
                             type="text"
                             placeholder='E-mail'
-                            className='w-full md:w-1/2 p-3 border border-gray-400 rounded-lg text-black'
+                            className='w-full h-11 md:w-1/2 p-3 border border-gray-400 rounded-lg text-black'
                         />
                     </div>
                     <textarea
