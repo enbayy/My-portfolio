@@ -26,12 +26,33 @@ function HomePage() {
                 </div>
                 <div className={`flex justify-center space-x-8 mt-4 transition-opacity duration-1000 ease-in-out delay-500
                     ${isPageLoaded ? 'opacity-100' : 'opacity-0'}`}>
-                    <a href="https://www.linkedin.com/in/enesbayarr/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-600 transition-colors duration-300">
+                    <a
+                        href="https://www.linkedin.com/in/enesbayarr/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white transition-all duration-300 
+                            filter brightness-125 
+                                    shadow-lg shadow-gray-400/50 
+                                    shadow-[0_0_10px_3px_rgba(156,163,175,0.5)] 
+                                    rounded-lg hover:text-black hover:bg-white"
+                    >
                         <BsLinkedin size={40} />
                     </a>
-                    <a href="https://github.com/enbayy" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-600 transition-colors duration-300">
+
+
+                    <a
+                        href="https://github.com/enbayy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white transition-all duration-300 
+        filter brightness-125 
+        shadow-lg shadow-gray-400/50 
+        shadow-[0_0_10px_3px_rgba(156,163,175,0.5)] 
+        rounded-full hover:text-black hover:bg-white"
+                    >
                         <FaGithub size={40} />
                     </a>
+
                 </div>
             </div>
         </section>
